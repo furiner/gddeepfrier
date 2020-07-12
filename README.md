@@ -6,5 +6,10 @@ To run this program, please run this command in the directory of the deepfrier f
 npm install
 ```
 
+And to run the program itself?
+```
+node app.js 
+```
+
 This application requires Node.js v12+ for usage.
 If you require support, please contact me on Discord. (BB#1337)
