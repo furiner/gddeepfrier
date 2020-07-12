@@ -11,6 +11,7 @@ const fs = require("fs");
 const path = require("path");
 const types = ["png", "jpg", "jpeg"];
 const Config = require("./config");
+const { intensity } = require('./config');
 
 const Path = Config.readPath;
 const ExportPath = Config.writePath;
@@ -53,8 +54,10 @@ function getRandom(num) {
             console.log("Ruining Image " + i + " of " + (all.length + i) + ": " + image)
             Jimp.read(path.join(Path, image)).then((edit) => {
                 edit
-                    .pixelate(getRandom(getRandom(0.2)))
-                    .contrast(seed.double()).posterize(getRandom(getRandom(0.1)))
+                    .pixelate(getRandom(getRandom(0.2)) * intensity)
+                    .contrast(seed.double())
+                    .posterize(getRandom(getRandom(0.1)) * intensity)
+                    .dither()
                     .brightness(seed())
                     .write(path.join(ExportPath, image));
 
