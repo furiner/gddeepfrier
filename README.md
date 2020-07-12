@@ -11,5 +11,7 @@ And to run the program itself?
 node app.js 
 ```
 
+**I SUGGEST NOT OVERWRITING YOUR RESOURCES FOLDER.**
+
 This application requires Node.js v12+ for usage.
 If you require support, please contact me on Discord. (BB#1337)
