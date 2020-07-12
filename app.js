@@ -57,7 +57,6 @@ function getRandom(num) {
                     .pixelate(getRandom(getRandom(0.2)) * intensity)
                     .contrast(seed.double())
                     .posterize(getRandom(getRandom(0.1)) * intensity)
-                    .dither()
                     .brightness(seed())
                     .write(path.join(ExportPath, image));
 
