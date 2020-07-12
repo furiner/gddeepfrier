@@ -26,7 +26,10 @@ function getRandom(num) {
 // nwn
 (function run() {
     if (!fs.existsSync(Path)) return console.log("Could not read from directory. Ending program!");
-    if (!fs.existsSync(ExportPath)) return console.log("Could not write to save directory. Ending program!");
+    if (!fs.existsSync(ExportPath)) {
+        console.log("Could not write to save directory. I'll make it, then!");
+        fs.mkdirSync(ExportPath);
+    }
 
     let files = fs.readdirSync(Path);
     let images = files.filter(i => types.includes(i.split(".")[1]));
